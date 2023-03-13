@@ -1,0 +1,13 @@
+.home {
+  background-color: #343434f5;
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+
+  &__video {
+    video {
+      width: 60rem;
+    }
+  }
+}

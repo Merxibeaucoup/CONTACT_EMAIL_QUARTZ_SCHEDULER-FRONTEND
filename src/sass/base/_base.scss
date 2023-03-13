@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/** for sticky footer at bottom **/
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-family: "Alata", sans-serif;
+  //   color: $VeryDarkGray;
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: #777;
+  font-family: "Alata", sans-serif;
+  border: none;
+  color: #fcfbfc;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
