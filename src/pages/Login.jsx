@@ -19,7 +19,7 @@ const Login = () => {
         password,
       });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/");
+      navigate("/contacts");
     } catch (err) {
       setError(err.response.data);
     }

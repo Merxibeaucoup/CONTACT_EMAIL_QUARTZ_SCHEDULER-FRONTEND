@@ -25,7 +25,7 @@ const Register = () => {
         ...user,
       });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/");
+      navigate("/contacts");
     } catch (err) {
       console.log(err);
     }
