@@ -40,21 +40,21 @@ const Register = () => {
           <input
             name="firstname"
             type="text"
-            placeholder="johndoe"
+            placeholder="john ..."
             onChange={handleChange}
           />
           <label htmlFor="">Lastname</label>
           <input
             name="lastname"
             type="text"
-            placeholder="johndoe"
+            placeholder="doe ..."
             onChange={handleChange}
           />
           <label htmlFor="">Email</label>
           <input
             name="email"
             type="email"
-            placeholder="email"
+            placeholder="email ..."
             onChange={handleChange}
           />
           <label htmlFor="">Password</label>
