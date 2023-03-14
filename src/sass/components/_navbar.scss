@@ -1,6 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
   background-color: #494a97;
 
@@ -9,10 +10,38 @@
 
   &__buttons {
     width: max-content;
-    &-login {
-      margin-right: 1rem;
-      font-size: 2rem;
-      color: #ffe66d;
+
+    &__outs {
+      &-name {
+        color: #fff;
+        font-size: 2rem;
+        margin-right: 0.7rem;
+      }
+      &-logout {
+        &:hover {
+          background-color: rgb(209, 26, 26);
+          color: #fff;
+        }
+      }
+    }
+
+    &__ins {
+      &-login {
+        margin-right: 1.2rem;
+        font-size: 2rem;
+        color: #ffe66d;
+        &:hover {
+          color: #ff512f;
+        }
+      }
+      &-register {
+        margin-right: 1.2rem;
+        font-size: 2rem;
+        color: #2fff36;
+        &:hover {
+          color: #ff512f;
+        }
+      }
     }
   }
 }

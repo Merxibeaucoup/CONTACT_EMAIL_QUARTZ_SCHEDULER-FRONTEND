@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import newRequest from "../utils/newRequest";
+import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth/AuthContext";
+import newRequest from "../utils/newRequest";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const userRef = useRef();
+  const passwordRef = useRef();
+  const { dispatch, isFetching } = useContext(AuthContext);
 
   // const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -13,16 +14,17 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
     try {
       const res = await newRequest.post("/auth/authenticate", {
-        email,
-        password,
+        email: userRef.current.value,
+        password: passwordRef.current.value,
       });
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/contacts");
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     } catch (err) {
-      setError(err.response.data);
+      dispatch({ type: "LOGIN_FAILURE" });
     }
+    navigate("/contacts");
   };
 
   return (
@@ -34,17 +36,14 @@ const Login = () => {
           name="email"
           type="email"
           placeholder="me@mail.com"
-          onChange={(e) => setEmail(e.target.value)}
+          ref={userRef}
         />
 
         <label htmlFor="">Password</label>
-        <input
-          name="password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-        {error && error}
+        <input name="password" type="password" ref={passwordRef} />
+        <button type="submit" disabled={isFetching}>
+          Login
+        </button>
       </form>
     </div>
   );

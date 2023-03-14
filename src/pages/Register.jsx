@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth/AuthContext";
 import newRequest from "../utils/newRequest";
 
 const Register = () => {
@@ -9,6 +10,8 @@ const Register = () => {
     email: "",
     password: "",
   });
+
+  const { dispatch, isFetching } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -20,17 +23,17 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    dispatch({ type: "REGISTER_START" });
     try {
-      const res = await newRequest.post("/auth/register", {
+      const res = newRequest.post("/auth/register", {
         ...user,
       });
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/contacts");
+      dispatch({ type: "REGISTER_SUCCESS", payload: res.data });
     } catch (err) {
-      console.log(err);
+      dispatch({ type: "REGISTER_FAILURE" });
     }
+    navigate("/login");
   };
-
   return (
     <div className="register">
       <form onSubmit={handleSubmit}>
@@ -60,7 +63,9 @@ const Register = () => {
           <label htmlFor="">Password</label>
           <input name="password" type="password" onChange={handleChange} />
 
-          <button type="submit">Register</button>
+          <button type="submit" disabled={isFetching}>
+            Register
+          </button>
         </div>
       </form>
     </div>
