@@ -1,11 +1,20 @@
 .contacts {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 8rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+
+  &__add {
+    &-btn {
+      background-color: green;
+      color: #fff;
+      font-size: 2rem;
+      padding: 2rem;
+      border-radius: 9999rem;
+    }
+  }
 
   &__contact {
     background-color: rgb(232, 245, 219);
-    width: 40rem;
+    width: 50rem;
     padding: 2rem;
     border: 5px solid #000;
     border-radius: 10px;
@@ -15,6 +24,20 @@
 
     &__buttons {
       text-align: right;
+      cursor: pointer;
+      &-edit {
+        color: navy;
+      }
+      &-delete {
+        color: red;
+      }
     }
   }
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  // gap: 2rem;
 }

@@ -1,9 +1,15 @@
 .footer {
   background-color: #494a97;
-  position: sticky;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding: 2rem 0;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
