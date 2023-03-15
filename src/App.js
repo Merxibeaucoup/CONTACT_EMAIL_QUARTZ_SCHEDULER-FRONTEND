@@ -18,7 +18,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
-        <Route path="contacts" element={<Contacts />} />
+        <Route path="contacts" element={user ? <Contacts /> : <Register />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,0 +1,20 @@
+.contacts {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 8rem;
+
+  &__contact {
+    background-color: rgb(232, 245, 219);
+    width: 40rem;
+    padding: 2rem;
+    border: 5px solid #000;
+    border-radius: 10px;
+    text-align: left;
+    margin: 2.5rem 0;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    &__buttons {
+      text-align: right;
+    }
+  }
+}

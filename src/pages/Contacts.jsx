@@ -23,18 +23,29 @@ const Contacts = () => {
     fetchPosts();
   }, []);
   return (
-    <div>
-      {/* Home
-      <button onClick={handleLogout}>{user && "LOGOUT"}</button> */}
-      {posts.map((item, i) => (
-        <div key={i}>
-          <div>{item.email}</div>
-          <div>{item.firstname}</div>
-          <div>{item.lastname}</div>
-          <div>{item.firstname}</div>
-          <div>{item.number}</div>
-        </div>
-      ))}
+    <div className="contacts">
+      <div className="contact">
+        {posts.map((c, i) => (
+          <ul key={i} className="contacts__contact">
+            <li className="contacts__contact-email">
+              <h2>{c.email}</h2>
+            </li>
+            <li className="contacts__contact-firstname">
+              <p>{c.firstname}</p>
+            </li>
+            <li className="contacts__contact-lastname">
+              <p>{c.lastname}</p>
+            </li>
+            <li className="contacts__contact-number">
+              <p>{c.number}</p>
+            </li>
+            <div className="contacts__contact__buttons">
+              <p>edit</p>
+              <p>delete</p>
+            </div>
+          </ul>
+        ))}
+      </div>
     </div>
   );
 };
