@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth/AuthContext";
 import newRequest from "../utils/newRequest";
 
@@ -13,8 +12,6 @@ const Modal = ({ setModal }) => {
   });
 
   const { user } = useContext(AuthContext);
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setContact((prev) => {
