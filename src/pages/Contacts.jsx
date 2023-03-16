@@ -15,7 +15,9 @@ const Contacts = () => {
     const fetchPosts = async () => {
       try {
         const res = await newRequest.get("/contact/all/user", {
-          headers: { Authorization: `Bearer ${user.token}` },
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
         });
         setPosts(res.data);
       } catch (err) {
@@ -47,6 +49,9 @@ const Contacts = () => {
 
               <li className="contacts__contact-number">
                 <p>{c.number}</p>
+              </li>
+              <li className="contacts__contact-number">
+                <p>{c.birthday}</p>
               </li>
               <div className="contacts__contact__buttons">
                 <p className="contacts__contact__buttons-edit">edit</p>

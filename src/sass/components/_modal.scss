@@ -11,7 +11,7 @@
 }
 .backshadow .custom-modal {
   width: 50rem;
-  height: 50rem;
+  height: 53rem;
   background-color: #fff;
   position: relative;
 }
@@ -31,4 +31,57 @@
   position: absolute;
   top: -15px;
   right: -15px;
+}
+
+.modal__form {
+  form {
+    padding: 5px 20px;
+    display: flex;
+    gap: 120px;
+
+    h1 {
+      color: gray;
+      margin-bottom: 20px;
+    }
+
+    .form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: space-between;
+
+      h1 {
+        text-align: center;
+      }
+
+      label {
+        color: gray;
+        font-size: 18px;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid rgb(216, 214, 214);
+      }
+
+      button {
+        border: none;
+        padding: 20px;
+        color: white;
+        font-weight: 500;
+        font-size: 1.8rem;
+        background: linear-gradient(to right, #ff512f, #494a97);
+        cursor: pointer;
+
+        transition: all 0.4s linear;
+
+        &:hover {
+          background: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
 }
