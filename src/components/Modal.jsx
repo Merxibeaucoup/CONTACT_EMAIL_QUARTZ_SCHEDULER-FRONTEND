@@ -55,32 +55,37 @@ const Modal = ({ setModal }) => {
               <input
                 name="firstname"
                 type="text"
-                placeholder="john ..."
+                placeholder="master"
                 onChange={handleChange}
               />
               <label htmlFor="">Lastname</label>
               <input
                 name="lastname"
                 type="text"
-                placeholder="doe ..."
+                placeholder="bruce-wayne"
                 onChange={handleChange}
               />
               <label htmlFor="">Number</label>
               <input
                 name="number"
                 type="text"
-                placeholder="1234567890 ..."
+                placeholder="1234567890"
                 onChange={handleChange}
               />
               <label htmlFor="">Email</label>
               <input
                 name="email"
                 type="email"
-                placeholder="email ..."
+                placeholder="brucewayne@gotham.com"
                 onChange={handleChange}
               />
               <label htmlFor="">Birthday</label>
-              <input name="birthday" type="text" onChange={handleChange} />
+              <input
+                name="birthday"
+                type="text"
+                placeholder="yyyy-mm-dd"
+                onChange={handleChange}
+              />
 
               <button type="submit">Register</button>
             </div>

@@ -84,7 +84,7 @@ const Edit = () => {
             <input
               type="text"
               value={firstname}
-              className="singlePostTitleInput"
+              className="singlePostFirstnameInput"
               autoFocus
               onChange={(e) => setFirstname(e.target.value)}
             />
@@ -92,7 +92,7 @@ const Edit = () => {
             <input
               type="text"
               value={lastname}
-              className="singlePostTitleInput"
+              className="singlePostLastnameInput"
               autoFocus
               onChange={(e) => setLastname(e.target.value)}
             />
@@ -100,7 +100,7 @@ const Edit = () => {
             <input
               type="text"
               value={number}
-              className="singlePostTitleInput"
+              className="singlePostNumberInput"
               autoFocus
               onChange={(e) => setNumber(e.target.value)}
             />
@@ -108,7 +108,7 @@ const Edit = () => {
             <input
               type="text"
               value={email}
-              className="singlePostTitleInput"
+              className="singlePostEmailInput"
               autoFocus
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -116,7 +116,7 @@ const Edit = () => {
             <input
               type="text"
               value={birthday}
-              className="singlePostTitleInput"
+              className="singlePostBirthdayInput"
               autoFocus
               onChange={(e) => setBirthday(e.target.value)}
             />
