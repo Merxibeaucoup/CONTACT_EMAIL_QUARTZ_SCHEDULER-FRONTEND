@@ -1,0 +1,106 @@
+.edit {
+  background-color: #3434343d;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4rem;
+
+  &__misc {
+    &-delete {
+      margin: 5.5rem;
+      color: #b52222;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #b52222;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+
+    &-back {
+      margin: 6rem;
+      text-decoration: none;
+      color: #2e294e;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #2e294e;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  form {
+    width: 360px;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      color: gray;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      color: gray;
+      font-size: 18px;
+    }
+
+    input,
+    textarea {
+      padding: 20px;
+      border: 1px solid rgb(216, 214, 214);
+    }
+
+    button {
+      border: none;
+      padding: 20px;
+      color: white;
+      font-weight: 500;
+      font-size: 1.8rem;
+      background: linear-gradient(to right, #1ccad8, #0cf574);
+      cursor: pointer;
+
+      transition: all 0.4s linear;
+
+      &:hover {
+        background: #fff;
+        color: #000;
+      }
+    }
+  }
+}

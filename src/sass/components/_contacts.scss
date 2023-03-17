@@ -25,12 +25,15 @@
 
     &__buttons {
       text-align: right;
-      cursor: pointer;
+
       &-edit {
         color: navy;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
       }
       &-delete {
         color: red;
+        cursor: pointer;
       }
     }
   }

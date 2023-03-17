@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 import { AuthContext } from "../context/auth/AuthContext";
 import newRequest from "../utils/newRequest";
 
 const Contacts = () => {
   const [posts, setPosts] = useState([]);
-  const { user, dispatch } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [modal, setModal] = useState(false);
 
-  const navigate = useNavigate();
-
+  /** fetch All posts */
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -26,6 +25,27 @@ const Contacts = () => {
     };
     fetchPosts();
   }, []);
+  /** fetch single post */
+
+  // const handleUpdate = async (e) => {
+  //   ref.current.click();
+  //   try {
+  //     const res = await newRequest.get(`/contact/${posts.id}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${user.token}`,
+  //       },
+  //     });
+  //     setSinglePost(res.data);
+  //     setEmail(res.data?.email);
+  //     setFirstname(res.data?.firstname);
+  //     setLastname(res.data?.lastname);
+  //     setNumber(res.data?.number);
+  //     setBirthday(res.data?.birthday);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
   return (
     <div className="contacts">
       <div className="contacts__add">
@@ -36,8 +56,8 @@ const Contacts = () => {
       </div>
       <div className="contact">
         {posts.map((c, i) => (
-          <div>
-            <ul key={i} className="contacts__contact">
+          <div key={i}>
+            <ul className="contacts__contact">
               <li className="contacts__contact-email">
                 <h2>{c.email}</h2>
               </li>
@@ -54,8 +74,9 @@ const Contacts = () => {
                 <p>{c.birthday}</p>
               </li>
               <div className="contacts__contact__buttons">
-                <p className="contacts__contact__buttons-edit">edit</p>
-                <p className="contacts__contact__buttons-delete">delete</p>
+                <Link to={`/contact/${c.id}`}>
+                  <p className="contacts__contact__buttons-edit">edit</p>
+                </Link>
               </div>
             </ul>
           </div>
